@@ -15,10 +15,10 @@ sub process {
     my ($self, $c, @args) = @_;
     my $dc = $self->dc || $self->init_dc($c);
 
-    $c->log->info(Dumper $dc, $c->request->uri->path);
     my $dc_data = $dc->get( $c->request->uri->path, $c->stash );
 
-    $c->response->body(JSON->new->utf8->shrink->encode($dc_data) );
+    $c->response->content_type('application/json');
+    $c->response->body( JSON->new->utf8->shrink->encode($dc_data) );
 
     return;
 }
