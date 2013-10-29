@@ -1,1 +1,5 @@
 name: App::Wollemi
+
+Data::Context:
+    path : dc/
+    fallback : true
