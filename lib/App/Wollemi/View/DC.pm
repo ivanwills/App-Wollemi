@@ -1,14 +1,14 @@
 package App::Wollemi::View::DC;
 use Moose;
 use namespace::autoclean;
-use Data::Context;
+use Data::Context::BEM;
 use JSON;
 
 extends 'Catalyst::View';
 
 has dc => (
     is      => 'rw',
-    isa     => 'Data::Context',
+    isa     => 'Data::Context::BEM',
 );
 
 sub process {
@@ -26,7 +26,10 @@ sub process {
 sub init_dc {
     my ($self, $c) = @_;
 
-    my $dc = Data::Context->new( $c->config->{'Data::Context'} );
+    my $dc = Data::Context::BEM->new(
+        %{ $c->config->{'Data::Context::BEM'} },
+        log => $c->log,
+    );
     $self->dc($dc);
 
     return $dc;
