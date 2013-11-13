@@ -15,6 +15,11 @@ sub process {
     my ($self, $c, @args) = @_;
     my $dc = $self->dc || $self->init_dc($c);
 
+    my $dc_html = $dc->get_html( $c->request->uri->path, $c->stash );
+
+    $c->response->body( $dc_html );
+    return;
+
     my $dc_data = $dc->get( $c->request->uri->path, $c->stash );
 
     $c->response->content_type('application/json');
