@@ -3,3 +3,5 @@ name: App::Wollemi
 Data::Context::BEM:
     path : dc/
     fallback : true
+    Template:
+        INCLUDE_PATH: root/
