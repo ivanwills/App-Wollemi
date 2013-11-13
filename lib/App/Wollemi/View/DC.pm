@@ -15,6 +15,14 @@ sub process {
     my ($self, $c, @args) = @_;
     my $dc = $self->dc || $self->init_dc($c);
 
+    my $file = 'root' . $c->request->uri->path;
+    $c->log->info($file);
+    if ( -f $file ) {
+        $c->response->body( 'Page not found' );
+        $c->response->status(404);
+        return;
+    }
+
     my $dc_html = $dc->get_html( $c->request->uri->path, $c->stash );
 
     $c->response->body( $dc_html );
