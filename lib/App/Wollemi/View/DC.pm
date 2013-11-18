@@ -23,7 +23,10 @@ sub process {
         return;
     }
 
-    my $dc_html = $dc->get_html( $c->request->uri->path, $c->stash );
+    my $path = $c->request->uri->path;
+    $path .= 'index' if $path =~ m{/$};
+
+    my $dc_html = $dc->get_html( $path, $c->stash );
 
     $c->response->body( $dc_html );
     return;
