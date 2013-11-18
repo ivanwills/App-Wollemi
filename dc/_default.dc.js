@@ -1,5 +1,6 @@
 {
     "block" : "page",
+    "title" : "Wollemi",
     "metadata" : [
         { "name" : "ROBOTS"     , "value" : "INDEX,FOLLOW" },
         { "name" : "author"     , "value" : "Ivan Wills" },
