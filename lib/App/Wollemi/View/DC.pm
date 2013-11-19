@@ -26,9 +26,25 @@ sub process {
     my $path = $c->request->uri->path;
     $path .= 'index' if $path =~ m{/$};
 
-    my $dc_html = $dc->get_html( $path, $c->stash );
+    my $get = 'get_html';
 
-    $c->response->body( $dc_html );
+    if ( my ($type) = $path =~ /[.](css|js)$/ ) {
+        $get = 'get_' . ( $type eq 'js' ? 'scripts' : 'styles' );
+    }
+    elsif ( $c->request->params->{bem} && $c->request->params->{bem_type} ) {
+        $get = 'get_' . $c->request->params->{bem_type};
+    }
+
+    $c->response->content_type(
+        $get eq 'get_html'      ? 'text/html'
+        : $get eq 'get_scripts' ? 'text/javascript'
+        : $get eq 'get_styles'  ? 'text/css'
+        :                         die "Unknown type"
+    );
+
+    my $output = $dc->$get( $path, $c->stash );
+
+    $c->response->body( $output );
     return;
 
     my $dc_data = $dc->get( $c->request->uri->path, $c->stash );
