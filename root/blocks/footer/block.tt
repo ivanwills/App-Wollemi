@@ -1,1 +1,7 @@
-Copyright (c) Ivan Wills 2013
+    <div class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <p class="navbar-text">Copyright (c) Ivan Wills 2013</p>
+        </div>
+      </div>
+    </div>

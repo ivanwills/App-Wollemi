@@ -6,7 +6,8 @@
         { "name" : "author"     , "value" : "Ivan Wills" },
         { "name" : "copyright"  , "value" : "Copyright (c) 2013 Ivan Wills, All Rights Reserved" },
         { "name" : "description", "value" : "Structured data site" },
-        { "name" : "keywords"   , "value" : "bem wollemi" }
+        { "name" : "keywords"   , "value" : "bem wollemi" },
+        { "name" : "viewport"   , "value" : "width=device-width, initial-scale=1.0" }
     ],
     "styles" : [
         { "href" : "/css/styles.css" },
