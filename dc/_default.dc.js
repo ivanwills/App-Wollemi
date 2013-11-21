@@ -26,6 +26,9 @@
         },
         {
             "block" : "body",
+            "mods"  : [
+                "container",
+            ]
         },
         {
             "block" : "footer",
