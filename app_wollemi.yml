@@ -5,3 +5,11 @@ Data::Context::BEM:
     fallback : true
     Template:
         INCLUDE_PATH: root/
+
+Model::MyModel:
+    host : localhost
+    port : 27017
+    dbname : wollemi
+    #username : myuser
+    #password : mypass
+    #collectionname : preferedcollection
