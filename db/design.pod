@@ -9,12 +9,16 @@ Two options PostgreSQL or MongoDB.
 =head2 PostgreSQL
 
 User accounts more traditional
-Can be done to be reasonably portable to other DBs
+Can be done in a such a way as to be reasonably portable to other DB engines.
+Tree queries.
+BEM content will be text blobs (no easy searching)
 
 =head2 MongoDB
 
 The BEM data is a more natural fit for JSON
 Ease in setup
+Querying of deep data possible (not trivial)
+history in same object?
 
 =head1 What's needed
 
@@ -33,5 +37,13 @@ site's content.
 
 =back
 
+Each script will need filter filds
+
+eg:
+
+  path
+  site
+  device_type
+  tags
 
 =cut
