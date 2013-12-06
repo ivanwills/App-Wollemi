@@ -1,0 +1,14 @@
+{
+    "users" : [
+    ],
+    "bem" : [
+        {
+            "type"         : "some_type",
+            "is_published" : true,
+            "is_current"   : false,
+            "created"      : "2013-12-06 19:19:00",
+            "modified"     : "2013-12-06 19:19:00",
+        },
+    ]
+}
+
