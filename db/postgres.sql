@@ -17,7 +17,7 @@ CREATE TABLE bem (
     bem_published   BOOLEAN NOT NULL DEFAULT FALSE
 );
 
-ALTER TABLE bem_type ADD FOREIGN KEY current_bem_id REFERENCES bem(bem_id);
+ALTER TABLE bem_type ADD CONSTRAINT current_bem_id_bem_bem_id_fkey FOREIGN KEY (current_bem_id) REFERENCES bem(bem_id);
 
 CREATE TABLE tag_group (
     tag_group_id SERIAL PRIMARY KEY,
