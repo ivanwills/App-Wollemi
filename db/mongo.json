@@ -1,6 +1,19 @@
 {
     "users" : [
     ],
+    "tag_groups" : [
+        {
+            "name" : "my group",
+            "desc" : "Grouped for some reason"
+        }
+    ],
+    "tags" : [
+        {
+            "name"  : "my tag",
+            "group" : "my group",
+            "group_order" : 1,
+        }
+    ],
     "bem" : [
         {
             "type"         : "some_type",

@@ -15,9 +15,17 @@ CREATE TABLE bem (
     bem_published   BOOLEAN NOT NULL DEFAULT FALSE
 );
 
+CREATE TABLE tag_group (
+    tag_group_id SERIAL PRIMARY KEY,
+    tag_group    VARCHAR NOT NULL UNIQUE,
+    tab          VARCHAR UNIQUE NOT NULL
+)
+
 CREATE TABLE tag (
-    tag_id      SERIAL PRIMARY KEY,
-    tab         VARCHAR UNIQUE NOT NULL
+    tag_id       SERIAL PRIMARY KEY,
+    tag_group_id INTEGER REFERENCES tag_group(tag_group_id),
+    tag_order    INTEGER DEFAULT 1,
+    tab          VARCHAR UNIQUE NOT NULL
 )
 
 CREATE TABLE bem_tag (
