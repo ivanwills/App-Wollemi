@@ -46,4 +46,16 @@ eg:
   device_type
   tags
 
+Notes:
+
+Bem type scripts contain no data they just layout other scripts.
+
+Data entry is done into each non-type bem script.
+
+The path  is used for simple filtering eg if multiple sites are being used
+the site is the first entry into the path, others may include device type,
+logged in status etc.
+`
+Further filtering can be done with tags (may be these for virtual paths?)
+
 =cut
