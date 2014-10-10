@@ -40,8 +40,14 @@ Standard 404 error page
 
 sub default :Path {
     my ( $self, $c ) = @_;
+    $c->log->info('default ', $c->request->url);
     #$c->response->body( 'Page not found' );
     #$c->response->status(404);
+}
+
+sub auto {
+    my ( $self, $c ) = @_;
+    $c->log->info('auto ', $c->request->url);
 }
 
 =head2 end
