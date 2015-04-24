@@ -26,14 +26,13 @@ my $builder = Module::Build->new(
         'Moose'                            => '2.0',
         'namespace::autoclean'             => 0,
         'Path::Class'                      => '0.16',
-        'Test::More'                       => '1.001002',
         'version'                          => 0,
     },
     configure_requires => {
         'Module::Build' => 0.38,
     },
     build_requires => {
-        'Test::More'           => 0,
+        'Test::More'           => '0.88',
         'Test::NoWarnings'     => 0,
         'Test::MinimumVersion' => 0,
     },
