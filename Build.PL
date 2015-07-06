@@ -25,7 +25,6 @@ my $builder = Module::Build->new(
         'JSON'                             => 0,
         'Moose'                            => '2.0',
         'namespace::autoclean'             => 0,
-        'Path::Class'                      => '0.16',
         'version'                          => 0,
     },
     configure_requires => {
