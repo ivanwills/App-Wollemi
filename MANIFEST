@@ -1,8 +1,5 @@
-.perl.tag
-.travis.yml
 app_wollemi.psgi
 app_wollemi.yml
-bem-static.log
 Build.PL
 Changes
 db/design.pod
@@ -11,14 +8,9 @@ db/postgres.dia
 db/postgres.sql
 dc/_default.dc.js
 dc/index.dc.js
-errors.err
-full
-lib/App/.Wollemi.pm.swp
 lib/App/Wollemi.pm
-lib/App/Wollemi/Controller/.Root.pm.swp
 lib/App/Wollemi/Controller/Root.pm
 lib/App/Wollemi/Model/MongoDB.pm
-lib/App/Wollemi/View/.DC.pm.swp
 lib/App/Wollemi/View/DC.pm
 MANIFEST			This list of files
 partial
@@ -49,9 +41,4 @@ t/02pod.t
 t/03podcoverage.t
 t/model_MongoDB.t
 t/view_DC.t
-tags
-tmp/_default.css
-tmp/_default.html
-tmp/index.css
-tmp/index.html
-vrc.yml
+LICENSE
