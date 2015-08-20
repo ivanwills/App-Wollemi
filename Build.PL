@@ -36,7 +36,6 @@ my $builder = Module::Build->new(
         'Test::MinimumVersion' => 0,
     },
     add_to_cleanup     => [ 'App-Wollemi-*' ],
-    create_makefile_pl => 'traditional',
     create_license     => 1,
     meta_merge         => {
         resources => {
