@@ -73,6 +73,24 @@ sub main {
         value => '' . $App::Wollemi::Schema::VERSION,
     });
 
+    my $base = path($Bin, '..', 'dc');
+    my @dc = $base->children;
+
+    while (my $dc = shift @dc) {
+        if (-d $dc) {
+            push @dc, $dc->children;
+        }
+        else {
+            my ($name) = $dc =~ /^$base(.*)$/;
+            $name =~ s/[.]dc[.]js(?:on)?$//;
+
+            $schema->resultset('Data')->find_or_create({
+                name => 'wollemi' . $name,
+                json => scalar $dc->slurp,
+            });
+        }
+    }
+
     return;
 }
 
