@@ -60,7 +60,7 @@ sub end : ActionClass('RenderView') {}
 
 =head1 AUTHOR
 
-ivan,,,
+Ivan Wills
 
 =head1 LICENSE
 

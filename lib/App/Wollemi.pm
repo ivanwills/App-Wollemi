@@ -45,6 +45,7 @@ __PACKAGE__->config(
 # Start the application
 __PACKAGE__->setup();
 
+=encoding utf8
 
 =head1 NAME
 
@@ -64,7 +65,7 @@ L<App::Wollemi::Controller::Root>, L<Catalyst>
 
 =head1 AUTHOR
 
-ivan,,,
+Ivan Wills
 
 =head1 LICENSE
 

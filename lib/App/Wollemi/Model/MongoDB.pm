@@ -14,7 +14,7 @@ Catalyst Model.
 
 =head1 AUTHOR
 
-ivan,,,
+Ivan Wills
 
 =head1 LICENSE
 

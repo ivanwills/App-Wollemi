@@ -15,7 +15,7 @@ sub process {
     my ($self, $c, @args) = @_;
     my $dc = $self->dc || $self->init_dc($c);
 
-    my $file = 'root' . $c->request->uri->path;
+    my $file = $c->request->uri->path;
     $c->log->info($file);
     if ( -f $file ) {
         $c->response->body( 'Page not found' );
@@ -42,6 +42,7 @@ sub process {
         :                         die "Unknown type"
     );
 
+    $c->log->info('path: - ' . $path);
     my $output = $dc->$get( $path, $c->stash );
 
     $c->response->body( $output );
@@ -81,7 +82,7 @@ Catalyst View.
 
 =head1 AUTHOR
 
-ivan,,,
+Ivan Wills
 
 =head1 LICENSE
 
