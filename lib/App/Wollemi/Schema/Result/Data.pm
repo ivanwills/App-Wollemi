@@ -11,6 +11,7 @@ use warnings;
 use version;
 use Moose;
 use MooseX::NonMoose;
+use MooseX::MarkAsMethods autoclean => 1;
 use utf8;
 extends 'DBIx::Class::Core';
 
@@ -105,6 +106,7 @@ May include numerous subsections (i.e., =head2, =head3, etc.).
 
   data_type: 'json'
   is_nullable: 1
+  original: {data_type => "varchar"}
 
 =head2 created
 

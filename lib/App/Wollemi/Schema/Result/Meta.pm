@@ -11,6 +11,7 @@ use warnings;
 use version;
 use Moose;
 use MooseX::NonMoose;
+use MooseX::MarkAsMethods autoclean => 1;
 use utf8;
 extends 'DBIx::Class::Core';
 

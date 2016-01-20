@@ -1,4 +1,4 @@
-package App::Wollemi::Schema::Result::Sites;
+package App::Wollemi::Schema::Result::Site;
 
 # Created on: 2016-01-18 13:46:01
 # Create by:  Ivan Wills
@@ -54,15 +54,15 @@ __END__
 
 =head1 NAME
 
-App::Wollemi::Schema::Result::Sites - Minimum structure for App::Wollemi
+App::Wollemi::Schema::Result::Site - Minimum structure for App::Wollemi
 =head1 VERSION
 
-This documentation refers to App::Wollemi::Schema::Result::Sites version 0.0.1
+This documentation refers to App::Wollemi::Schema::Result::Site version 0.0.1
 
 
 =head1 SYNOPSIS
 
-   use App::Wollemi::Schema::Result::Sites;
+   use App::Wollemi::Schema::Result::Site;
 
    # Brief but working code example(s) here showing the most common usage(s)
    # This section will be as far as many users bother reading, so make it as
@@ -124,7 +124,7 @@ context to help them understand the methods that are subsequently described.
 
 Param: C<$search> - type (detail) - description
 
-Return: App::Wollemi::Schema::Result::Sites -
+Return: App::Wollemi::Schema::Result::Site -
 
 Description:
 
