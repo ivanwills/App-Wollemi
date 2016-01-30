@@ -14,6 +14,10 @@ has dc => (
 sub process {
     my ($self, $c, @args) = @_;
     my $dc = $self->dc || $self->init_dc($c);
+    my $stash = {
+        c => $c,
+        %{ $c->stash }
+    };
 
     my $file = $c->request->uri->path;
     $c->log->info($file);
@@ -31,28 +35,28 @@ sub process {
     if ( my ($type) = $path =~ /[.](css|js)$/ ) {
         $get = 'get_' . ( $type eq 'js' ? 'scripts' : 'styles' );
     }
-    elsif ( $c->request->params->{bem} && $c->request->params->{bem_type} ) {
-        $get = 'get_' . $c->request->params->{bem_type};
+    elsif ( $c->request->params->{bem} ) {
+        $get = $c->request->params->{bem_type}
+            ? 'get_' . $c->request->params->{bem_type}
+            : 'get';
     }
 
     $c->response->content_type(
         $get eq 'get_html'      ? 'text/html'
         : $get eq 'get_scripts' ? 'text/javascript'
         : $get eq 'get_styles'  ? 'text/css'
+        : $get eq 'get'         ? 'application/json'
         :                         die "Unknown type"
     );
 
     $c->log->info('path: - ' . $path);
-    my $output = $dc->$get( $path, $c->stash );
+    my $output = $dc->$get( $path, $stash );
+
+    if ( $get eq 'get' ) {
+        $output = JSON->new->utf8->shrink->encode($output);
+    }
 
     $c->response->body( $output );
-    return;
-
-    my $dc_data = $dc->get( $c->request->uri->path, $c->stash );
-
-    $c->response->content_type('application/json');
-    $c->response->body( JSON->new->utf8->shrink->encode($dc_data) );
-
     return;
 }
 
