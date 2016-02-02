@@ -41,6 +41,14 @@ sub process {
             : 'get';
     }
 
+    my $output = $dc->$get( $path, $stash );
+
+    if ( $get eq 'get' ) {
+        $output = JSON->new->utf8->shrink->encode($output);
+    }
+
+    $c->response->body( $output );
+
     $c->response->content_type(
         $get eq 'get_html'      ? 'text/html'
         : $get eq 'get_scripts' ? 'text/javascript'
@@ -49,14 +57,6 @@ sub process {
         :                         die "Unknown type"
     );
 
-    $c->log->info('path: - ' . $path);
-    my $output = $dc->$get( $path, $stash );
-
-    if ( $get eq 'get' ) {
-        $output = JSON->new->utf8->shrink->encode($output);
-    }
-
-    $c->response->body( $output );
     return;
 }
 
