@@ -1,0 +1,21 @@
+---
+count: 4
+default:
+  restart: 0
+  wait: 0
+editor:
+  files:
+    libdb:
+      - lib/App/Wollemi/Schema.pm
+      - lib/App/Wollemi/Schema/Result/*.pm
+    main:
+      - lib/App/Wollemi.pm
+      - lib/App/Wollemi/Controller/*.pm
+      - lib/App/Wollemi/Model/*.pm
+      - lib/App/Wollemi/View/*.pm
+name: App-Wollemi
+terminals:
+  2:
+    edit: main
+  3:
+    edit: libdb
