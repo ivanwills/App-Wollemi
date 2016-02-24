@@ -27,9 +27,9 @@ app_wollemi_create.pl [options] model|view|controller name [helper] [options]
    app_wollemi_create.pl view My::View
    app_wollemi_create.pl view HTML TT
    app_wollemi_create.pl model My::Model
-   app_wollemi_create.pl model SomeDB DBIC::Schema MyApp::Schema create=dynamic\
+   app_wollemi_create.pl model SomeDB DBIC::Schema App::Wollemi::Schema create=dynamic\
    dbi:SQLite:/tmp/my.db
-   app_wollemi_create.pl model AnotherDB DBIC::Schema MyApp::Schema create=static\
+   app_wollemi_create.pl model AnotherDB DBIC::Schema App::Wollemi::Schema create=static\
    [Loader opts like db_schema, naming] dbi:Pg:dbname=foo root 4321
    [connect_info opts like quote_char, name_sep]
 
