@@ -13,8 +13,10 @@ editor:
       - lib/App/Wollemi/Controller/*.pm
       - lib/App/Wollemi/Model/*.pm
       - lib/App/Wollemi/View/*.pm
-name: App-Wollemi
+name: wollemi
 terminals:
+  1a:
+    command: plackup app_wollemi.psgi -p 4334
   2:
     edit: main
   3:
