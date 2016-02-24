@@ -13,7 +13,6 @@ lib/App/Wollemi/Controller/Root.pm
 lib/App/Wollemi/Model/MongoDB.pm
 lib/App/Wollemi/View/DC.pm
 MANIFEST			This list of files
-partial
 README
 root/blocks/body/block.css
 root/blocks/footer/block.tt
