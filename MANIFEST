@@ -10,10 +10,18 @@ dc/_default.dc.js
 dc/index.dc.js
 lib/App/Wollemi.pm
 lib/App/Wollemi/Controller/Root.pm
+lib/App/Wollemi/Model/DB.pm
 lib/App/Wollemi/Model/MongoDB.pm
+lib/App/Wollemi/Schema.pm
+lib/App/Wollemi/Schema/Result/Data.pm
+lib/App/Wollemi/Schema/Result/Meta.pm
+lib/App/Wollemi/Schema/Result/Site.pm
 lib/App/Wollemi/View/DC.pm
+LICENSE
 MANIFEST			This list of files
-README
+META.json
+META.yml
+README.pod
 root/blocks/body/block.css
 root/blocks/footer/block.tt
 root/blocks/heading/block.tt
@@ -35,9 +43,11 @@ script/app_wollemi_create.pl
 script/app_wollemi_fastcgi.pl
 script/app_wollemi_server.pl
 script/app_wollemi_test.pl
+script/setup.pl
 t/01app.t
 t/02pod.t
 t/03podcoverage.t
+t/model_DB.t
 t/model_MongoDB.t
 t/view_DC.t
-LICENSE
+TODO.md

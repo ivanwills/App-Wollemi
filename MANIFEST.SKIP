@@ -98,3 +98,4 @@ temp*
 .perl.tag
 .travis.yml
 bem-static.log
+.vtide.yml
